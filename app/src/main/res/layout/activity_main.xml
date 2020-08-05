@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.luwei.lwbaselib.MainActivity">
+
+        <com.luwei.ui.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/colorPrimary"
+            app:showDefaultBackIcon="false">
+
+        </com.luwei.ui.view.TitleBar>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基础功能模块的使用示例"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_to_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_to_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_to_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dialog"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_to_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="popup"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_to_recyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView 相关，Adapter、Decoration"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_to_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="permission"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_to_RxBus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RxBus"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_to_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_activity_for_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="for result"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片预览"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择图片-头像预览"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Banner"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_timer_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timer Button"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TitleBar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="友盟分享及登录"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+</ScrollView>

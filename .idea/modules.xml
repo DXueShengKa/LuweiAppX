@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ImagePreview/ImagePreview.iml" filepath="$PROJECT_DIR$/ImagePreview/ImagePreview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageSelector/ImageSelector.iml" filepath="$PROJECT_DIR$/ImageSelector/ImageSelector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LuweiAppX.iml" filepath="$PROJECT_DIR$/.idea/modules/LuweiAppX.iml" group="LuweiAppX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LuweiAppX-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LuweiAppX-app.iml" group="LuweiAppX/app" />
+      <module fileurl="file://$PROJECT_DIR$/LwBaseLib.iml" filepath="$PROJECT_DIR$/LwBaseLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImagePreview/com.github.LuweiAppX-ImagePreview.iml" filepath="$PROJECT_DIR$/.idea/modules/ImagePreview/com.github.LuweiAppX-ImagePreview.iml" group="LuweiAppX/ImagePreview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageSelector/com.github.LuweiAppX-ImageSelector.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageSelector/com.github.LuweiAppX-ImageSelector.iml" group="LuweiAppX/ImageSelector" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/com.github.LuweiAppX-base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/com.github.LuweiAppX-base.iml" group="LuweiAppX/base" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net/com.github.LuweiAppX-net.iml" filepath="$PROJECT_DIR$/.idea/modules/net/com.github.LuweiAppX-net.iml" group="LuweiAppX/net" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recyclerview/com.github.LuweiAppX-recyclerview.iml" filepath="$PROJECT_DIR$/.idea/modules/recyclerview/com.github.LuweiAppX-recyclerview.iml" group="LuweiAppX/recyclerview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rxbus/com.github.LuweiAppX-rxbus.iml" filepath="$PROJECT_DIR$/.idea/modules/rxbus/com.github.LuweiAppX-rxbus.iml" group="LuweiAppX/rxbus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ui/com.github.LuweiAppX-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/ui/com.github.LuweiAppX-ui.iml" group="LuweiAppX/ui" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/umlibrary/com.github.LuweiAppX-umlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/umlibrary/com.github.LuweiAppX-umlibrary.iml" group="LuweiAppX/umlibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/com.github.LuweiAppX-util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/com.github.LuweiAppX-util.iml" group="LuweiAppX/util" />
+      <module fileurl="file://$PROJECT_DIR$/net/net.iml" filepath="$PROJECT_DIR$/net/net.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerview/recyclerview.iml" filepath="$PROJECT_DIR$/recyclerview/recyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxbus/rxbus.iml" filepath="$PROJECT_DIR$/rxbus/rxbus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umlibrary/umlibrary.iml" filepath="$PROJECT_DIR$/umlibrary/umlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
+    </modules>
+  </component>
+</project>
