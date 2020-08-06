@@ -3,13 +3,14 @@ package com.previewlibrary.view;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import androidx.annotation.CallSuper;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.core.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.CallSuper;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 
 import com.previewlibrary.GPVideoPlayerActivity;
 import com.previewlibrary.GPreviewActivity;
@@ -86,24 +87,19 @@ public class BasePhotoFragment extends Fragment {
     public void onStop() {
         ZoomMediaLoader.getInstance().getLoader().onStop(this);
         super.onStop();
+        release();
     }
 
     @CallSuper
     @Override
     public void onDestroyView() {
-        release();
         super.onDestroyView();
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ZoomMediaLoader.getInstance().getLoader().clearMemory(getActivity());
+        ZoomMediaLoader.getInstance().getLoader().clearMemory(requireActivity());
         if (getActivity() != null && getActivity().isFinishing()) {
             listener = null;
         }

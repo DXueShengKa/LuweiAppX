@@ -3,16 +3,16 @@ package com.previewlibrary;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.TextView;
+
 import androidx.annotation.CallSuper;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
 
 import com.previewlibrary.enitity.IThumbViewInfo;
 import com.previewlibrary.view.BasePhotoFragment;
@@ -134,14 +134,14 @@ public class GPreviewActivity extends FragmentActivity {
      */
     @SuppressLint("StringFormatMatches")
     private void initView() {
-        viewPager = (PhotoViewPager) findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
         //viewPager的适配器
         PhotoPagerAdapter adapter = new PhotoPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(currentIndex);
         viewPager.setOffscreenPageLimit(3);
-        bezierBannerView = (BezierBannerView) findViewById(R.id.bezierBannerView);
-        ltAddDot = (TextView) findViewById(R.id.ltAddDot);
+        bezierBannerView =  findViewById(R.id.bezierBannerView);
+        ltAddDot =  findViewById(R.id.ltAddDot);
         if (type == GPreviewBuilder.IndicatorType.Dot) {
             bezierBannerView.setVisibility(View.VISIBLE);
             bezierBannerView.attachToViewpager(viewPager);
@@ -176,13 +176,13 @@ public class GPreviewActivity extends FragmentActivity {
                 ltAddDot.setVisibility(View.GONE);
             }
         }
-        // 监听到全局布局发生变化的时候，启动进入动画
+        // 监听一次全局布局发生变化的时候，启动进入动画
         viewPager.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                viewPager.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 BasePhotoFragment fragment = fragments.get(currentIndex);
                 fragment.transformIn();
+                viewPager.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
 
@@ -208,11 +208,9 @@ public class GPreviewActivity extends FragmentActivity {
             // fragment 的背景设置为透明
             fragment.changeBg(Color.TRANSPARENT);
             // 监听图片的动画是否完成，接着再执行 activity 的退出动画。
-            fragment.transformOut(new SmoothImageView.onTransformListener() {
-                @Override
-                public void onTransformCompleted(SmoothImageView.Status status) {
+            fragment.transformOut(status -> {
+                if (SmoothImageView.Status.STATE_OUT.equals(status))
                     exit();
-                }
             });
         } else {
             exit();
@@ -268,7 +266,7 @@ public class GPreviewActivity extends FragmentActivity {
     private class PhotoPagerAdapter extends FragmentPagerAdapter {
 
         PhotoPagerAdapter(FragmentManager fm) {
-            super(fm);
+            super(fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
         @Override
@@ -281,10 +279,6 @@ public class GPreviewActivity extends FragmentActivity {
             return fragments == null ? 0 : fragments.size();
         }
 
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            super.destroyItem(container, position, object);
-        }
     }
 
 

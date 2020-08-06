@@ -17,12 +17,9 @@ public class GPVideoPlayerActivity extends Activity {
         setContentView(R.layout.activity_gpvideoplayer);
         videoView=findViewById(R.id.gpVideo);
         videoView.setVideoPath(getIntent().getStringExtra("url"));
-        videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
-            @Override
-            public boolean onError(MediaPlayer mp, int what, int extra) {
-                Toast.makeText(GPVideoPlayerActivity.this, R.string.Playback_failed,Toast.LENGTH_SHORT).show();
-                return false;
-            }
+        videoView.setOnErrorListener((mp, what, extra) -> {
+            Toast.makeText(GPVideoPlayerActivity.this, R.string.Playback_failed,Toast.LENGTH_SHORT).show();
+            return false;
         });
         videoView.start();
 
