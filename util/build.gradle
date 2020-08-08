@@ -27,6 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '29.0.3'
 
 }
 
@@ -70,7 +71,7 @@ task javadoc(type: Javadoc) {
 
 // 打包文档jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 

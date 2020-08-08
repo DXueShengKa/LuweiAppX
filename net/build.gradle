@@ -27,6 +27,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '29.0.3'
 
 }
 
@@ -49,7 +50,7 @@ dependencies {
 // 打包源码jar
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier.set('sources')
 }
 //编译groovy代码时采用 UTF-8
 tasks.withType(GroovyCompile) {
@@ -70,7 +71,7 @@ task javadoc(type: Javadoc) {
 
 // 打包文档jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 

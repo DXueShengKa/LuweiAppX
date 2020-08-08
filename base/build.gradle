@@ -67,7 +67,7 @@ task javadoc(type: Javadoc) {
 
 // 打包文档jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
