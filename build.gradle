@@ -1,5 +1,4 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-//apply from:"conf.gradle"
 buildscript {
     
     repositories {
@@ -7,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.1.0'
         //1.自动化maven打包插件
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 

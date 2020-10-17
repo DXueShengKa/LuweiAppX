@@ -38,7 +38,7 @@ public class LogInterceptor implements Interceptor {
 
             XLog.d(TAG, "url : " + url);
             XLog.d(TAG, "method : " + request.method());
-            if (headers != null && headers.size() > 0) {
+            if (headers.size() > 0) {
                 XLog.e(TAG, "headers : " + headers.toString());
             }
             RequestBody requestBody = request.body();

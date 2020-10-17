@@ -3,8 +3,10 @@ package com.luwei.base;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 
@@ -46,13 +48,11 @@ public abstract class LwBaseActivity<P extends IPresent> extends AppCompatActivi
 
 
     public void tranDecorView() {
-        if (Build.VERSION.SDK_INT >= 21) {
-            View decorView = getWindow().getDecorView();
-            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(option);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
+        View decorView = getWindow().getDecorView();
+        int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+        decorView.setSystemUiVisibility(option);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
     }
 
     @Override
@@ -88,9 +88,9 @@ public abstract class LwBaseActivity<P extends IPresent> extends AppCompatActivi
     private void adaptScreen() {
         int size = 0;
         if ((size = getAdaptSizeVertical()) > 0) {
-            AdaptScreenUtils.adaptWidth(getResources(),size);
+            AdaptScreenUtils.adaptWidth(getResources(), size);
         } else if ((size = getAdaptSizeHorizontal()) > 0) {
-            AdaptScreenUtils.adaptHeight(getResources(),size);
+            AdaptScreenUtils.adaptHeight(getResources(), size);
         }
     }
 

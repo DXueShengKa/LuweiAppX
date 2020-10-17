@@ -47,13 +47,9 @@ public class ImageGridAdapter extends BaseAdapter {
         this.showCamera = showCamera;
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         int width = 0;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             Point size = new Point();
             wm.getDefaultDisplay().getSize(size);
             width = size.x;
-        }else{
-            width = wm.getDefaultDisplay().getWidth();
-        }
         mGridWidth = width / column;
     }
     /**

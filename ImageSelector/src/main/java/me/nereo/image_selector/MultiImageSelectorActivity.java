@@ -54,7 +54,7 @@ public class MultiImageSelectorActivity extends FragmentActivity
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(Color.BLACK);
         }
-        ImageView iv_back = (ImageView) findViewById(R.id.selector_button_back);
+        ImageView iv_back = findViewById(R.id.selector_button_back);
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

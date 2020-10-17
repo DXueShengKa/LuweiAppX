@@ -26,9 +26,7 @@ public abstract class ApiSubscriber<T> extends ResourceSubscriber<T> {
             if (!(e instanceof NetError)) {
                 if (e instanceof UnknownHostException) {
                     error = new NetError(e, NetError.NoConnectError);
-                } else if (e instanceof JSONException
-                        || e instanceof JsonParseException
-                        || e instanceof JsonSyntaxException) {
+                } else if (e instanceof JSONException || e instanceof JsonParseException) {
                     error = new NetError(e, NetError.ParseError);
                 } else if (e instanceof BIZexception){
                     error = new NetError(e, NetError.BusinessError);
