@@ -201,9 +201,7 @@ public class Kits {
             List<ActivityManager.RunningTaskInfo> taskList = am.getRunningTasks(1);
             if (taskList != null && !taskList.isEmpty()) {
                 ComponentName topActivity = taskList.get(0).topActivity;
-                if (topActivity != null && !topActivity.getPackageName().equals(context.getPackageName())) {
-                    return true;
-                }
+                return topActivity != null && !topActivity.getPackageName().equals(context.getPackageName());
             }
             return false;
         }
@@ -301,7 +299,7 @@ public class Kits {
          */
         public static StringBuilder readFile(String filePath, String charsetName) {
             java.io.File file = new java.io.File(filePath);
-            StringBuilder fileContent = new StringBuilder("");
+            StringBuilder fileContent = new StringBuilder();
             if (file == null || !file.isFile()) {
                 return null;
             }
@@ -457,7 +455,7 @@ public class Kits {
             try {
                 makeDirs(file.getAbsolutePath());
                 o = new FileOutputStream(file, append);
-                byte data[] = new byte[1024];
+                byte[] data = new byte[1024];
                 int length = -1;
                 while ((length = stream.read(data)) != -1) {
                     o.write(data, 0, length);
@@ -827,17 +825,17 @@ public class Kits {
     }
 
     public static class Date {
-        private static SimpleDateFormat m = new SimpleDateFormat("MM", Locale.getDefault());
-        private static SimpleDateFormat d = new SimpleDateFormat("dd", Locale.getDefault());
-        private static SimpleDateFormat md = new SimpleDateFormat("MM-dd", Locale.getDefault());
-        private static SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        private static SimpleDateFormat ymdDot = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault());
-        private static SimpleDateFormat ymdhms = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        private static SimpleDateFormat ymdhmss = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
-        private static SimpleDateFormat ymdhm = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-        private static SimpleDateFormat hm = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        private static SimpleDateFormat mdhm = new SimpleDateFormat("MM月dd日 HH:mm", Locale.getDefault());
-        private static SimpleDateFormat mdhmLink = new SimpleDateFormat("MM-dd HH:mm", Locale.getDefault());
+        private static final SimpleDateFormat m = new SimpleDateFormat("MM", Locale.getDefault());
+        private static final SimpleDateFormat d = new SimpleDateFormat("dd", Locale.getDefault());
+        private static final SimpleDateFormat md = new SimpleDateFormat("MM-dd", Locale.getDefault());
+        private static final SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        private static final SimpleDateFormat ymdDot = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault());
+        private static final SimpleDateFormat ymdhms = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        private static final SimpleDateFormat ymdhmss = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+        private static final SimpleDateFormat ymdhm = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+        private static final SimpleDateFormat hm = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        private static final SimpleDateFormat mdhm = new SimpleDateFormat("MM月dd日 HH:mm", Locale.getDefault());
+        private static final SimpleDateFormat mdhmLink = new SimpleDateFormat("MM-dd HH:mm", Locale.getDefault());
 
         /**
          * 年月日[2015-07-28]

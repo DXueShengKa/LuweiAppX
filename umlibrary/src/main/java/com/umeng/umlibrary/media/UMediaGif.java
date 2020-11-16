@@ -12,7 +12,7 @@ import com.umeng.socialize.media.UMEmoji;
  */
 public class UMediaGif extends UMediaBase<UMediaGif> {
 
-    private String umGifUrl;
+    private final String umGifUrl;
 
     /**
      * GIF链接

@@ -21,11 +21,11 @@ import java.util.Random;
 public class BarrageView extends View implements Runnable {
 
     //弹幕集合
-    private List<TextItem> items = new ArrayList<TextItem>();
+    private final List<TextItem> items = new ArrayList<TextItem>();
     //随机数,用于取得x,y坐标,颜色值，以及移动速度
-    private Random random = new Random();
+    private final Random random = new Random();
     //画笔
-    private Paint paint;
+    private final Paint paint;
 
 
     public BarrageView(Context context) {
@@ -101,7 +101,7 @@ public class BarrageView extends View implements Runnable {
         private String content;//文本内容
         private float fx;//x坐标
         private float fy;//y坐标
-        private float perStep;//移动速度
+        private final float perStep;//移动速度
         private int textColor;//字体颜色
 
         public TextItem(String content, float fx, float fy, float perStep, int textColor) {

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 public class EmptyBinderReal extends LwItemBinder<EmptyBean> {
 
-    private EmptyBinder mEmptyBinder;
+    private final EmptyBinder mEmptyBinder;
     private View mView;
 
     public EmptyBinderReal(EmptyBinder emptyBinder) {

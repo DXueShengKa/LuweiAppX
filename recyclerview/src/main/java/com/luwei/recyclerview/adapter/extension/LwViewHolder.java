@@ -31,8 +31,8 @@ import com.luwei.recyclerview.adapter.multitype.LwAdapter;
  */
 public class LwViewHolder extends RecyclerView.ViewHolder {
 
-    private View mView;
-    private SparseArray<View> mViewMap = new SparseArray<>();
+    private final View mView;
+    private final SparseArray<View> mViewMap = new SparseArray<>();
 
     public LwViewHolder(View itemView) {
         super(itemView);

@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -154,7 +155,7 @@ public class RSAUtils {
      * @throws Exception
      */
     public static String decryptData(String cipherData, String keyStr, KeyType keyType) throws Exception {
-        return new String(decryptData(Base64.decode(cipherData.getBytes(), Base64.NO_WRAP), keyStr, keyType), "utf-8");
+        return new String(decryptData(Base64.decode(cipherData.getBytes(), Base64.NO_WRAP), keyStr, keyType), StandardCharsets.UTF_8);
     }
 
 
@@ -207,7 +208,7 @@ public class RSAUtils {
      * @throws Exception
      */
     public static String decryptData(String cipherData, InputStream inputStream, KeyType keyType) throws Exception {
-        return new String(decryptData(Base64.decode(cipherData.getBytes(), Base64.NO_WRAP), inputStream, keyType), "utf-8");
+        return new String(decryptData(Base64.decode(cipherData.getBytes(), Base64.NO_WRAP), inputStream, keyType), StandardCharsets.UTF_8);
     }
 
 
@@ -293,7 +294,7 @@ public class RSAUtils {
         try {
             KeyFactory keyFactory = KeyFactory.getInstance(RSA);
             X509EncodedKeySpec keySpec = new X509EncodedKeySpec(Base64.decode(publicKeyStr, Base64.DEFAULT));
-            return (RSAPublicKey) keyFactory.generatePublic(keySpec);
+            return keyFactory.generatePublic(keySpec);
         } catch (NoSuchAlgorithmException e) {
             throw new Exception("无此算法");
         } catch (InvalidKeySpecException e) {
@@ -315,7 +316,7 @@ public class RSAUtils {
         try {
             PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(Base64.decode(privateKeyStr, Base64.DEFAULT));
             KeyFactory keyFactory = KeyFactory.getInstance(RSA, BC);
-            return (RSAPrivateKey) keyFactory.generatePrivate(keySpec);
+            return keyFactory.generatePrivate(keySpec);
         } catch (NoSuchAlgorithmException e) {
             throw new Exception("无此算法");
         } catch (InvalidKeySpecException e) {

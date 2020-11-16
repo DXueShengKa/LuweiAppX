@@ -7,8 +7,8 @@ package com.luwei.rxbus;
  */
 public class BaseEvent implements IEvent {
 
-    private Object mContent;
-    private int mFlag;
+    private final Object mContent;
+    private final int mFlag;
 
     public BaseEvent(int flag, Object content) {
         this.mContent = content;

@@ -36,13 +36,7 @@ public class ImageUtils {
 
         long intervalTime = thisEventTime - lastDownTime;
 
-        if (offsetX <= 10 && offsetY <= 10 && intervalTime >= longPressTime) {
-
-            return true;
-
-        }
-
-        return false;
+        return offsetX <= 10 && offsetY <= 10 && intervalTime >= longPressTime;
 
     }
 }

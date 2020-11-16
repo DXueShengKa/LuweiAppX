@@ -9,26 +9,26 @@ public class ImageLoaderConfig {
     /**
      * 占位图
      */
-    private int mPlacePicRes;
+    private final int mPlacePicRes;
     /**
      * 错误图
      */
-    private int mErrorPicRes;
+    private final int mErrorPicRes;
 
     /**
      * 图片的Url
      */
-    private String mImgUrl;
+    private final String mImgUrl;
 
     /**
      * 最大磁盘缓存
      */
-    private int maxDishCache;
+    private final int maxDishCache;
 
     /**
      * 最大内存缓存
      */
-    private int maxMemoryCache;
+    private final int maxMemoryCache;
 
     public ImageLoaderConfig(Builder builder){
         this.maxDishCache = builder.maxDishCache;

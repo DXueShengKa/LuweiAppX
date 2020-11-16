@@ -34,7 +34,7 @@
 
        ```java
        public class ConfirmPopup extends BasePopup<ConfirmPopup> {
-           private Context mContext;
+           private final Context mContext;
            private Callback mCallback;
            private View.OnClickListener mOnCancelListener;
            private View.OnClickListener mOnConfirmListener;

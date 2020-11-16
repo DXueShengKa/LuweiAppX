@@ -19,9 +19,9 @@ import android.view.View;
  */
 public class TableDecoration extends GridSpaceDecoration {
 
-    private Drawable mDivider;
+    private final Drawable mDivider;
     private int mSize;
-    private Rect mBounds;
+    private final Rect mBounds;
 
     /**
      * @param color 边框颜色

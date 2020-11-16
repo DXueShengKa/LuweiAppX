@@ -12,7 +12,7 @@ import com.umeng.socialize.media.UMWeb;
  */
 public class UMediaWeb extends UMediaBase<UMediaWeb> {
 
-    private UMWeb umWeb;
+    private final UMWeb umWeb;
 
     /**
      * 分享链接

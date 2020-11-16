@@ -13,7 +13,7 @@ import com.umeng.socialize.media.UMVideo;
  */
 public class UMediaVideo extends UMediaBase<UMediaVideo> {
 
-    private UMVideo umVideo;
+    private final UMVideo umVideo;
 
     /**
      * 视频只能使用网络视频

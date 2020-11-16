@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class HeaderExtension implements Extension {
 
-    private Items mItems;
+    private final Items mItems;
 
     public HeaderExtension(Items items) {
         this.mItems = items;

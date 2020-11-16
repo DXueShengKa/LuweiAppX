@@ -26,11 +26,11 @@ public class TimerButton extends androidx.appcompat.widget.AppCompatButton {
 
     private CountDownTimer mTimer;
     private String mFormatText;
-    private String mOriginalText;
+    private final String mOriginalText;
     private String mFinishedText;
-    private ColorStateList mOriginalColor;
+    private final ColorStateList mOriginalColor;
     private int mStartedColor;
-    private Drawable mOriginalBackground;
+    private final Drawable mOriginalBackground;
     private Drawable mStartedBackground;
     private Callback mCallback;
     private int mTime;

@@ -58,9 +58,9 @@ public class BannerActivity extends AppCompatActivity {
     @BindView(R.id.banner_11)
     Banner banner11;
 
-    private List<String> mURLs = new ArrayList<>();
-    private List<Integer> mRes = new ArrayList<>();
-    private List<String> mTitle = new ArrayList<>();
+    private final List<String> mURLs = new ArrayList<>();
+    private final List<Integer> mRes = new ArrayList<>();
+    private final List<String> mTitle = new ArrayList<>();
 
     public static void start(Context context) {
         Intent starter = new Intent(context, BannerActivity.class);
@@ -276,7 +276,7 @@ public class BannerActivity extends AppCompatActivity {
         banner11.stopAutoPlay();
     }
 
-    private BannerLoader<String, ImageView> mBannerLoader = new BannerLoader<String, ImageView>() {
+    private final BannerLoader<String, ImageView> mBannerLoader = new BannerLoader<String, ImageView>() {
         @Override
         public void loadView(Context context, String path, ImageView imageView) {
             RequestOptions requestOptions = new RequestOptions()
@@ -297,7 +297,7 @@ public class BannerActivity extends AppCompatActivity {
         }
     };
 
-    private BannerLoader<String, View> mBannerLoader2 = new BannerLoader<String, View>() {
+    private final BannerLoader<String, View> mBannerLoader2 = new BannerLoader<String, View>() {
         @Override
         public void loadView(Context context, String path, View view) {
             ImageView banner = view.findViewById(R.id.custom_iv);
@@ -320,7 +320,7 @@ public class BannerActivity extends AppCompatActivity {
         }
     };
 
-    private BannerLoader<Integer, ImageView> mBannerLoader3 = new BannerLoader<Integer, ImageView>() {
+    private final BannerLoader<Integer, ImageView> mBannerLoader3 = new BannerLoader<Integer, ImageView>() {
         @Override
         public void loadView(Context context, Integer path, ImageView imageView) {
             RequestOptions requestOptions = new RequestOptions()

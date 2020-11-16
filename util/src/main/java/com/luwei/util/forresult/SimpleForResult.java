@@ -15,7 +15,7 @@ import io.reactivex.Observable;
  */
 public class SimpleForResult {
     private static final String TAG = "SimpleForResult";
-    private SimpleOnResultFragment mSimpleOnResultFragment;
+    private final SimpleOnResultFragment mSimpleOnResultFragment;
 
     public SimpleForResult(AppCompatActivity activity) {
         mSimpleOnResultFragment = getOnResultFragment(activity.getSupportFragmentManager());

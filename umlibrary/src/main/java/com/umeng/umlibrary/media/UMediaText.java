@@ -11,7 +11,7 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
  */
 public class UMediaText extends UMediaBase<UMediaText> {
 
-    private String text;
+    private final String text;
 
     /**
      * 纯文本分享

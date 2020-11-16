@@ -25,8 +25,8 @@ import me.nereo.image_selector.bean.Folder;
  */
 public class FolderAdapter extends BaseAdapter {
 
-    private Context mContext;
-    private LayoutInflater mInflater;
+    private final Context mContext;
+    private final LayoutInflater mInflater;
 
     private List<Folder> mFolders = new ArrayList<>();
 
@@ -139,11 +139,11 @@ public class FolderAdapter extends BaseAdapter {
         TextView size;
         ImageView indicator;
         ViewHolder(View view){
-            cover = (ImageView)view.findViewById(R.id.cover);
-            name = (TextView) view.findViewById(R.id.name);
-            path = (TextView) view.findViewById(R.id.path);
-            size = (TextView) view.findViewById(R.id.size);
-            indicator = (ImageView) view.findViewById(R.id.indicator);
+            cover = view.findViewById(R.id.cover);
+            name = view.findViewById(R.id.name);
+            path = view.findViewById(R.id.path);
+            size = view.findViewById(R.id.size);
+            indicator = view.findViewById(R.id.indicator);
             view.setTag(this);
         }
 

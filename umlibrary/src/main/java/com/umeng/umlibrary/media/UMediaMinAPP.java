@@ -12,7 +12,7 @@ import com.umeng.socialize.media.UMMin;
  */
 public class UMediaMinAPP extends UMediaBase<UMediaMinAPP> {
 
-    private UMMin umMin;
+    private final UMMin umMin;
 
     /**
      * 兼容低版本的网页链接

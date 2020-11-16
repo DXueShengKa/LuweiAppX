@@ -78,7 +78,7 @@ public class MultiImageSelectorActivity extends FragmentActivity
             resultList = intent.getStringArrayListExtra(EXTRA_DEFAULT_SELECTED_LIST);
         }
 
-        mSubmitButton = (Button) findViewById(R.id.commit);
+        mSubmitButton = findViewById(R.id.commit);
         if(mode == MODE_MULTI){
             updateDoneText(resultList);
             mSubmitButton.setVisibility(View.VISIBLE);
@@ -161,9 +161,7 @@ public class MultiImageSelectorActivity extends FragmentActivity
 
     @Override
     public void onImageUnselected(String path) {
-        if(resultList.contains(path)){
-            resultList.remove(path);
-        }
+        resultList.remove(path);
         updateDoneText(resultList);
     }
 

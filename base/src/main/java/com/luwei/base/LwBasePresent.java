@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 public class LwBasePresent<V extends IView> implements IPresent<V> {
 
     private V v;
-    private CompositeDisposable mCompositeDisposable;
+    private final CompositeDisposable mCompositeDisposable;
 
     public LwBasePresent(){
         mCompositeDisposable = new CompositeDisposable();

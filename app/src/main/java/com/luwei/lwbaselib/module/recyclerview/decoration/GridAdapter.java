@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class GridAdapter extends SampleAdapter {
 
-    private int layoutId;
+    private final int layoutId;
 
     public GridAdapter(List<String> dataList, @LayoutRes int layoutId) {
         super(dataList);

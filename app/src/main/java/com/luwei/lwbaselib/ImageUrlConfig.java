@@ -12,7 +12,7 @@ import java.util.List;
 
 public final class ImageUrlConfig {
 
-    private static List<String> sUrls = new ArrayList<>();
+    private static final List<String> sUrls = new ArrayList<>();
 
     public static List<String> getUrls() {
         sUrls.clear();

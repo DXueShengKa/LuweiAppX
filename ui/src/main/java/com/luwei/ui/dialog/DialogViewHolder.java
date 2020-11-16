@@ -10,8 +10,8 @@ import android.widget.TextView;
  */
 
 public class DialogViewHolder {
-    private SparseArray<View> views;
-    private View convertView;
+    private final SparseArray<View> views;
+    private final View convertView;
 
     private DialogViewHolder(View view) {
         this.convertView = view;
@@ -23,7 +23,7 @@ public class DialogViewHolder {
     }
 
     public <T extends View> T getView(int viewId) {
-        View view = (View)this.views.get(viewId);
+        View view = this.views.get(viewId);
         if(view == null) {
             view = this.convertView.findViewById(viewId);
             this.views.put(viewId, view);
@@ -41,17 +41,17 @@ public class DialogViewHolder {
         view.setVisibility(isShow?View.VISIBLE:View.GONE);
     }
     public void setText(int viewId, String text) {
-        TextView textView = (TextView)this.getView(viewId);
+        TextView textView = this.getView(viewId);
         textView.setText(text);
     }
 
     public void setText(int viewId, int textId) {
-        TextView textView = (TextView)this.getView(viewId);
+        TextView textView = this.getView(viewId);
         textView.setText(textId);
     }
 
     public void setTextColor(int viewId, int colorId) {
-        TextView textView = (TextView)this.getView(viewId);
+        TextView textView = this.getView(viewId);
         textView.setTextColor(colorId);
     }
 

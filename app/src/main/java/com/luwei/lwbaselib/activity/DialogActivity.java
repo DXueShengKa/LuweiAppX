@@ -201,8 +201,8 @@ public class DialogActivity extends AppCompatActivity {
     }
 
     public class ArrayAdapter extends RecyclerView.Adapter<MyViewHolder> {
-        private Context context;
-        private List<String> dataList;
+        private final Context context;
+        private final List<String> dataList;
 
         public ArrayAdapter(Context context, List<String> list) {
             this.context = context;

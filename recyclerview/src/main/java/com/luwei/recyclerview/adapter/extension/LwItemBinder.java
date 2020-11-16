@@ -19,8 +19,8 @@ public abstract class LwItemBinder<T> extends ItemViewBinder<T, LwViewHolder> {
 
     private OnItemClickListener<T> mListener;
     private OnItemLongClickListener<T> mLongListener;
-    private SparseArray<OnChildClickListener<T>> mChildListenerMap = new SparseArray<>();
-    private SparseArray<OnChildLongClickListener<T>> mChildLongListenerMap = new SparseArray<>();
+    private final SparseArray<OnChildClickListener<T>> mChildListenerMap = new SparseArray<>();
+    private final SparseArray<OnChildLongClickListener<T>> mChildLongListenerMap = new SparseArray<>();
 
     protected abstract View getView(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent);
 

@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class StickAdapter extends RecyclerView.Adapter<StickAdapter.ViewHolder> implements StickHeaderDecoration.StickProvider {
 
-    private List<StickBean> mList;
+    private final List<StickBean> mList;
 
     public StickAdapter(@NonNull List<StickBean> list) {
         mList = list;

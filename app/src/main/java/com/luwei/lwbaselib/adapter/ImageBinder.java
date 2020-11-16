@@ -19,7 +19,7 @@ import com.luwei.util.imageloader.ImageLoaderUtils;
  * @Description:
  */
 public class ImageBinder extends LwItemBinder<ImageViewInfo> {
-    private Context mContext;
+    private final Context mContext;
     public ImageBinder(Context context){
         this.mContext = context;
     }

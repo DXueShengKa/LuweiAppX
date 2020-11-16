@@ -24,7 +24,7 @@ public class ImageLoaderUtils {
     /**
      * 默认参数配置
      */
-    private static ImageLoaderConfig mDefaultConfig = new ImageLoaderConfig.Builder()
+    private static final ImageLoaderConfig mDefaultConfig = new ImageLoaderConfig.Builder()
             .setMaxDishCache(1024 * 1024 * 50)
             .setMaxMemoryCache(1024 * 1024 * 10)
             .setErrorPicRes(R.mipmap.default_image)

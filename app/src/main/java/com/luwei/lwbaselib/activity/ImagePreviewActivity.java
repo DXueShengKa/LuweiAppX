@@ -30,7 +30,7 @@ public class ImagePreviewActivity extends LwBaseActivity {
     private Items mItems;
     private LwAdapter mAdapter;
     private ImageBinder mImageBinder;
-    private ArrayList<ImageViewInfo> mThumbViewInfoList = new ArrayList<>();
+    private final ArrayList<ImageViewInfo> mThumbViewInfoList = new ArrayList<>();
     private GridLayoutManager mGridLayoutManager;
 
     @Override
@@ -90,7 +90,7 @@ public class ImagePreviewActivity extends LwBaseActivity {
             View itemView = recyclerView.getChildAt(i - firstCompletelyVisiblePos);
             Rect bounds = new Rect();
             if (itemView != null) {
-                ImageView thumbView = (ImageView) itemView.findViewById(R.id.image);
+                ImageView thumbView = itemView.findViewById(R.id.image);
                 thumbView.getGlobalVisibleRect(bounds);
             }
             mThumbViewInfoList.get(i).setBounds(bounds);

@@ -15,7 +15,12 @@ import android.view.View;
  */
 public class StaggeredSpaceDecoration extends RecyclerView.ItemDecoration {
 
-    private int mHorizontal, mVertical, mLeft, mRight, mTop, mBottom;
+    private final int mHorizontal;
+    private final int mVertical;
+    private final int mLeft;
+    private final int mRight;
+    private final int mTop;
+    private final int mBottom;
     protected int mSpanCount;
     protected int mItemCount;
 

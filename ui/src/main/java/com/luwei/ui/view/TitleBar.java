@@ -33,8 +33,8 @@ import com.luwei.ui.R;
  */
 public class TitleBar extends RelativeLayout {
 
-    private Context mContext;
-    private static Config mConfig = new Config();
+    private final Context mContext;
+    private static final Config mConfig = new Config();
 
     private static final int WRAP_CONTENT = LayoutParams.WRAP_CONTENT;
     private static final int MATCH_PARENT = LayoutParams.MATCH_PARENT;

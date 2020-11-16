@@ -33,12 +33,12 @@ public class RxBus {
     /**
      * 被观察者（发射器）
      */
-    private FlowableProcessor<Object> mProcessor;
+    private final FlowableProcessor<Object> mProcessor;
 
     /**
      * 管理已注册的 {@link CompositeDisposable}
      */
-    private HashMap<Object, CompositeDisposable> mDisposableMap;
+    private final HashMap<Object, CompositeDisposable> mDisposableMap;
 
 
     private static RxBus instance;

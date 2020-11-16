@@ -51,7 +51,7 @@ public class UMShareAndAuthActivity extends LwBaseActivity {
     private String mGif;
     private String mMin;
 
-    private static SHARE_MEDIA[] sharePlatforms = new SHARE_MEDIA[]{
+    private static final SHARE_MEDIA[] sharePlatforms = new SHARE_MEDIA[]{
             SHARE_MEDIA.WEIXIN,
             SHARE_MEDIA.WEIXIN_CIRCLE,
             SHARE_MEDIA.WEIXIN_FAVORITE,

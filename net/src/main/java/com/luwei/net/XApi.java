@@ -28,9 +28,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 public class XApi {
     private static NetProvider sProvider = null;
 
-    private Map<String, NetProvider> providerMap = new HashMap<>();
-    private Map<String, Retrofit> retrofitMap = new HashMap<>();
-    private Map<String, OkHttpClient> clientMap = new HashMap<>();
+    private final Map<String, NetProvider> providerMap = new HashMap<>();
+    private final Map<String, Retrofit> retrofitMap = new HashMap<>();
+    private final Map<String, OkHttpClient> clientMap = new HashMap<>();
 
     public static final long connectTimeoutMills = 10 * 1000l;
     public static final long readTimeoutMills = 10 * 1000l;

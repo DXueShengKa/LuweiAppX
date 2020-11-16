@@ -21,9 +21,9 @@ public class BezierBannerView extends View implements ViewPager.OnPageChangeList
     //背景画笔
     private Paint mCirclePaint2;
     //选中路径
-    private Path mPath = new Path();
+    private final Path mPath = new Path();
     //背景路径
-    private Path mPath2 = new Path();
+    private final Path mPath2 = new Path();
     //选中颜色
     private int mSelectedColor;
     //未选中颜色
@@ -56,7 +56,7 @@ public class BezierBannerView extends View implements ViewPager.OnPageChangeList
     float mbgNextPointY;
 
     //是否进入自动移动状态
-    private boolean autoMove = false;
+    private final boolean autoMove = false;
     //第一阶段运动进度
     private float mProgress = 0;
     //第二阶段运动进度
@@ -69,9 +69,9 @@ public class BezierBannerView extends View implements ViewPager.OnPageChangeList
     private int count;
 
     //第一阶段运动
-    private int MOVE_STEP_ONE = 1;
+    private final int MOVE_STEP_ONE = 1;
     //第二阶段运动
-    private int MOVE_STEP_TWO = 2;
+    private final int MOVE_STEP_TWO = 2;
     //控制点坐标
     float controlPointX;
     float controlPointY;

@@ -65,11 +65,11 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
     private LinearLayout mIndicatorLl;
     private ImageView mDefaultImg;
 
-    private WeakHandler mWeakHandler = new WeakHandler();
-    private ArrayList<View> mBannerItems = new ArrayList<>();
-    private List<Object> mImagePaths = new ArrayList<>();
-    private Context mContext;
-
+    private final WeakHandler mWeakHandler = new WeakHandler();
+    private final ArrayList<View> mBannerItems = new ArrayList<>();
+    private final List<Object> mImagePaths = new ArrayList<>();
+    private final Context mContext;
+    private boolean isShowLog = false;
     //能否自动轮播
     private boolean mCanAutoPlay;
     //是否一屏多页
@@ -234,6 +234,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
             bannerScroller.setDuration(mPagerScrollTime);
             mField.set(mViewPager, bannerScroller);
         } catch (Exception e) {
+            if (isShowLog)
             Log.e(TAG, e.getMessage());
         }
     }
@@ -305,9 +306,11 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
                     || action == MotionEvent.ACTION_CANCEL
                     || action == MotionEvent.ACTION_OUTSIDE) {
                 startAutoPlay();
+                if (isShowLog)
                 Log.d(TAG, "dispatchTouchEvent: 开始轮播");
             } else if (action == MotionEvent.ACTION_DOWN) {
                 stopAutoPlay();
+                if (isShowLog)
                 Log.d(TAG, "dispatchTouchEvent: 取消轮播");
             }
         }
@@ -384,6 +387,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
                 mViewPager.setPageTransformer(true, transformer);
             }
         } catch (Exception e) {
+            if (isShowLog)
             Log.e(TAG, "Please set the PageTransformer class");
         }
         return this;
@@ -405,6 +409,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
     public void loadImagePaths(List<?> imagePaths) {
         if (imagePaths == null || imagePaths.isEmpty()) {
             mDefaultImg.setVisibility(VISIBLE);
+            if (isShowLog)
             Log.e(TAG, "The image data set is empty.");
             return;
         }
@@ -448,6 +453,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
         }
         //通知更新数据
         notifyBannerData();
+        if (isShowLog)
         Log.d(TAG, "loadImagePaths: banner所需元素：" + mImagePaths);
     }
 
@@ -571,6 +577,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
                     mWeakHandler.postDelayed(mBannerPlayRunnable, mIntervalTime);
                 }
             }
+            if (isShowLog)
             Log.d(TAG, "run: 下标：" + mCurrentIndex);
         }
     };
@@ -594,6 +601,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
         //多点触碰滑动，不做处理，你非要这样，我也没办法
         switch (state) {
             case 0:
+                if (isShowLog)
                 Log.d(TAG, "onPageScrollStateChanged: 空闲");
                 break;
             case 1:
@@ -617,10 +625,12 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
                         mViewPager.setCurrentItem(1, false);
                     }
                 }
+                if (isShowLog)
                 Log.d(TAG, "onPageScrollStateChanged: 按下拖拽：" + mCurrentIndex);
                 break;
             case 2:
                 // TODO: 2018/12/3
+                if (isShowLog)
                 Log.d(TAG, "onPageScrollStateChanged: 抬起");
                 break;
         }
@@ -643,6 +653,7 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
         if (mBannerPagerChangedListener != null) {
             mBannerPagerChangedListener.onPageSelected(findRealPosition(position));
         }
+        if (isShowLog)
         Log.d(TAG, "onPageSelected: 当前位置：" + mCurrentIndex
                 + "\n"
                 + "实际位置：" + findRealPosition(position));
@@ -776,6 +787,10 @@ public class Banner extends RelativeLayout implements ViewPager.OnPageChangeList
     public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+    }
+
+    public void setShowLog(boolean showLog) {
+        isShowLog = showLog;
     }
 
     /**

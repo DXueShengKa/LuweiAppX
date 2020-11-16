@@ -13,7 +13,7 @@ import com.umeng.socialize.media.UMusic;
  */
 public class UMediaMusic extends UMediaBase<UMediaMusic> {
 
-    private UMusic uMusic;
+    private final UMusic uMusic;
 
     /**
      * 音乐的播放链接 只能使用网络音乐

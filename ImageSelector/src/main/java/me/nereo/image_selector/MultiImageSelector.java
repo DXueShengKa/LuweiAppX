@@ -25,7 +25,7 @@ public class MultiImageSelector {
     private int mMode = MultiImageSelectorActivity.MODE_MULTI;
     private ArrayList<String> mOriginData;
     private static MultiImageSelector sSelector;
-    private Context mContext;
+    private final Context mContext;
 
     private MultiImageSelector(Context context){
         mContext = context;

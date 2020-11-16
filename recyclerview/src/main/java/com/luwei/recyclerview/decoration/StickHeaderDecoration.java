@@ -16,9 +16,9 @@ import android.view.View;
 public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
 
     //存储粘性头部的ViewHolder实例，复用机制减少性能损耗
-    private SparseArray<RecyclerView.ViewHolder> mViewMap = new SparseArray<>();
+    private final SparseArray<RecyclerView.ViewHolder> mViewMap = new SparseArray<>();
     //StickHeader的提供者
-    private StickProvider mProvider;
+    private final StickProvider mProvider;
 
     public StickHeaderDecoration(StickProvider provider) {
         mProvider = provider;

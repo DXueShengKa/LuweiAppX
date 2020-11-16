@@ -93,7 +93,7 @@ public class MultiImageSelectorFragment extends Fragment {
     // image result data set
     private ArrayList<String> resultList = new ArrayList<>();
     // folder result data set
-    private ArrayList<Folder> mResultFolder = new ArrayList<>();
+    private final ArrayList<Folder> mResultFolder = new ArrayList<>();
 
     private GridView mGridView;
     private Callback mCallback;
@@ -141,7 +141,7 @@ public class MultiImageSelectorFragment extends Fragment {
 
         mPopupAnchorView = view.findViewById(R.id.footer);
 
-        mCategoryText = (TextView) view.findViewById(R.id.category_btn);
+        mCategoryText = view.findViewById(R.id.category_btn);
         mCategoryText.setText(R.string.folder_all);
         mCategoryText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +162,7 @@ public class MultiImageSelectorFragment extends Fragment {
             }
         });
 
-        mGridView = (GridView) view.findViewById(R.id.grid);
+        mGridView = view.findViewById(R.id.grid);
         mGridView.setAdapter(mImageAdapter);
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -233,11 +233,7 @@ public class MultiImageSelectorFragment extends Fragment {
                         if (index == 0) {
                             getActivity().getSupportLoaderManager().restartLoader(LOADER_ALL, null, mLoaderCallback);
                             mCategoryText.setText(R.string.folder_all);
-                            if (showCamera()) {
-                                mImageAdapter.setShowCamera(true);
-                            } else {
-                                mImageAdapter.setShowCamera(false);
-                            }
+                            mImageAdapter.setShowCamera(showCamera());
                         } else {
                             Folder folder = (Folder) v.getAdapter().getItem(index);
                             if (null != folder) {
@@ -406,7 +402,7 @@ public class MultiImageSelectorFragment extends Fragment {
         }
     }
 
-    private LoaderManager.LoaderCallbacks<Cursor> mLoaderCallback = new LoaderManager.LoaderCallbacks<Cursor>() {
+    private final LoaderManager.LoaderCallbacks<Cursor> mLoaderCallback = new LoaderManager.LoaderCallbacks<Cursor>() {
 
         private final String[] IMAGE_PROJECTION = {
                 MediaStore.Images.Media.DATA,

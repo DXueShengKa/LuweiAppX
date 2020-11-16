@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference;
  * Date：2018/11/28
  */
 public class DefaultShareListener implements UMShareListener {
-    private WeakReference<Context> mContext;
+    private final WeakReference<Context> mContext;
     private SimpleShareListener mSimpleShareListener;
 
     public DefaultShareListener(Context context) {
