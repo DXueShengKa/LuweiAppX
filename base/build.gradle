@@ -3,10 +3,10 @@ apply plugin: 'com.github.dcendents.android-maven'
 // Your Group
 group='com.github.LuweiAppX'
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -19,7 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '29.0.3'
+    buildToolsVersion '30.0.3'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -34,7 +34,7 @@ dependencies {
     api 'io.reactivex.rxjava2:rxjava:2.2.19'
     api 'com.jakewharton:butterknife:10.2.1'
     // Android 开发工具代码
-    api 'com.blankj:utilcode:1.23.3'
+    api 'com.blankj:utilcodex:1.30.5'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

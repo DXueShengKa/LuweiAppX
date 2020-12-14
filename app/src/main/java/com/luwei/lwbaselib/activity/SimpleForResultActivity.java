@@ -1,8 +1,6 @@
 package com.luwei.lwbaselib.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
@@ -12,7 +10,6 @@ import com.luwei.lwbaselib.R;
 import com.luwei.util.forresult.SimpleForResult;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

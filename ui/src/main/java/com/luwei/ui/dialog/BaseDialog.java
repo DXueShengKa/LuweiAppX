@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -240,14 +241,14 @@ public abstract class BaseDialog extends DialogFragment {
     }
 
 
-    public void showDialog(AppCompatActivity appCompatActivity) {
+    public void showDialog(FragmentActivity fragmentActivity) {
         if (System.currentTimeMillis() - time<1000) {
             return;
         }
         time = System.currentTimeMillis();
         String tag = this.getClass().getSimpleName();
-        FragmentManager fragmentManager = appCompatActivity.getSupportFragmentManager();
-        if (!appCompatActivity.isFinishing()
+        FragmentManager fragmentManager = fragmentActivity.getSupportFragmentManager();
+        if (!fragmentActivity.isFinishing()
                 && fragmentManager.findFragmentByTag(tag)==null
                 && !this.isAdded()) {
 

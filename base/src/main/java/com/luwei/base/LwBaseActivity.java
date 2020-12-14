@@ -1,14 +1,12 @@
 package com.luwei.base;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
 
 import com.blankj.utilcode.util.AdaptScreenUtils;
 
