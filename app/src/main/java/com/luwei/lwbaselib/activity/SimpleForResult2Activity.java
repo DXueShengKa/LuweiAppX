@@ -6,8 +6,6 @@ import com.luwei.base.IPresent;
 import com.luwei.base.LwBaseActivity;
 import com.luwei.lwbaselib.R;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * @author LiCheng
@@ -17,6 +15,7 @@ public class SimpleForResult2Activity extends LwBaseActivity {
     @Override
     public void initView(Bundle savedInstanceState) {
 
+        setClickForView();
     }
 
     @Override
@@ -40,9 +39,12 @@ public class SimpleForResult2Activity extends LwBaseActivity {
     }
 
 
-    @OnClick(R.id.btn_change_text)
     public void onViewClicked() {
         setResult(RESULT_OK);
         finish();
     }
+    private void setClickForView(){
+        findViewById(R.id.btn_change_text).setOnClickListener(v -> onViewClicked());
+    }
+
 }

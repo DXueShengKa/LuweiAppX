@@ -8,8 +8,6 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.luwei.lwbaselib.R;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 权限的使用示例
@@ -22,11 +20,10 @@ public class PermissionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_permission);
-        ButterKnife.bind(this);
+        setClickForView();
     }
 
 
-    @OnClick(R.id.btn_get_permission)
     public void onViewClicked() {
         if (mRxPermissions == null) {
             mRxPermissions = new RxPermissions(this);
@@ -41,4 +38,8 @@ public class PermissionActivity extends AppCompatActivity {
             }
         });
     }
+    private void setClickForView(){
+        findViewById(R.id.btn_get_permission).setOnClickListener(v -> onViewClicked());
+    }
+
 }

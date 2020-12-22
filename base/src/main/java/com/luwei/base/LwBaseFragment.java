@@ -12,15 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 public abstract class LwBaseFragment<P extends IPresent>
         extends Fragment implements IView<P> {
     protected AppCompatActivity hostActivity;
     private P p;
-    private Unbinder unbinder;
     private View mRootView;
     @Nullable
     @Override
@@ -28,7 +23,6 @@ public abstract class LwBaseFragment<P extends IPresent>
                              @Nullable Bundle savedInstanceState) {
         Log.i(LwBaseActivity.TAG, "current fragment: "+this.getClass().getSimpleName());
         this.mRootView = inflater.inflate(this.getLayoutId(), container, false);
-        unbinder = ButterKnife.bind(this,mRootView);
         initView(savedInstanceState);
         initEvent();
         initData();
@@ -66,9 +60,6 @@ public abstract class LwBaseFragment<P extends IPresent>
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (unbinder != null) {
-            unbinder.unbind();
-        }
     }
 
 

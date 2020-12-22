@@ -22,8 +22,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import me.nereo.image_selector.PictureIntentHelper;
 import me.nereo.image_selector.MultiImageSelector;
 import me.nereo.image_selector.MultiImageSelectorActivity;
@@ -32,13 +30,9 @@ import me.nereo.image_selector.utils.FileUtils;
 public class HeaderActivity extends LwBaseActivity {
 
     public static final int REQUEST_SELECT_CODE = 1111;
-    @BindView(R.id.iv_header)
     ImageView ivHeader;
-    @BindView(R.id.btn_camera)
     Button btnCamera;
-    @BindView(R.id.btn_open1)
     Button btnOpen1;
-    @BindView(R.id.btn_open2)
     Button btnOpen2;
     private File mTmpFile;
 
@@ -49,6 +43,8 @@ public class HeaderActivity extends LwBaseActivity {
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
         simpleForResult = new SimpleForResult(this);
     }
 
@@ -73,7 +69,6 @@ public class HeaderActivity extends LwBaseActivity {
     }
 
 
-    @OnClick({R.id.iv_header, R.id.btn_camera, R.id.btn_open1, R.id.btn_open2, R.id.btn_open3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_header:
@@ -227,4 +222,19 @@ public class HeaderActivity extends LwBaseActivity {
             }
         }
     }
+    private void findView(){
+        ivHeader = findViewById(R.id.iv_header);
+        btnCamera = findViewById(R.id.btn_camera);
+        btnOpen1 = findViewById(R.id.btn_open1);
+        btnOpen2 = findViewById(R.id.btn_open2);
+    }
+
+    private void setClickForView(){
+        ivHeader.setOnClickListener(this::onViewClicked);
+        btnCamera.setOnClickListener(this::onViewClicked);
+        btnOpen1.setOnClickListener(this::onViewClicked);
+        btnOpen2.setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_open3).setOnClickListener(this::onViewClicked);
+    }
+
 }

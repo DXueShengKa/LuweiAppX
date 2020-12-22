@@ -16,7 +16,6 @@ import com.luwei.ui.popup.XGravity;
 import com.luwei.ui.popup.YGravity;
 import com.luwei.ui.view.TitleBar;
 
-import butterknife.OnClick;
 
 public class PopupActivity extends LwBaseActivity {
 
@@ -26,7 +25,6 @@ public class PopupActivity extends LwBaseActivity {
 
 
 
-    @OnClick({R.id.btn_up, R.id.btn_left, R.id.btn_right, R.id.btn_bottom, R.id.btn_center})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_up:
@@ -117,6 +115,7 @@ public class PopupActivity extends LwBaseActivity {
     public void initView(Bundle savedInstanceState) {
         initCustomPopup();
         initConfirmPopup();
+        setClickForView();
         initListPopup();
 
     }
@@ -140,4 +139,12 @@ public class PopupActivity extends LwBaseActivity {
     public IPresent newP() {
         return null;
     }
+    private void setClickForView(){
+        findViewById(R.id.btn_up).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_left).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_right).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_bottom).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_center).setOnClickListener(this::onViewClicked);
+    }
+
 }

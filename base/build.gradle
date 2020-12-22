@@ -32,10 +32,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
     api 'io.reactivex.rxjava2:rxjava:2.2.19'
-    api 'com.jakewharton:butterknife:10.2.1'
     // Android 开发工具代码
     api 'com.blankj:utilcodex:1.30.5'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

@@ -9,18 +9,14 @@ import com.luwei.base.LwBaseActivity;
 import com.luwei.lwbaselib.R;
 import com.luwei.util.forresult.SimpleForResult;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Toast 的使用示例
  */
 public class SimpleForResultActivity extends LwBaseActivity {
 
-    @BindView(R.id.tv_simple_text)
     TextView mTvSimpleText;
 
-    @OnClick(R.id.btn_open_for_result)
     public void onViewClicked() {
         // 简化调用 startActivityForResult 及避免在 onActivityResult 中处理繁琐的结果
         SimpleForResult simpleForResult = new SimpleForResult(this);
@@ -37,6 +33,8 @@ public class SimpleForResultActivity extends LwBaseActivity {
     @Override
     public void initView(Bundle savedInstanceState) {
 
+        findView();
+        setClickForView();
     }
 
     @Override
@@ -59,5 +57,13 @@ public class SimpleForResultActivity extends LwBaseActivity {
         return null;
     }
 
+
+    private void findView(){
+        mTvSimpleText = findViewById(R.id.tv_simple_text);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.btn_open_for_result).setOnClickListener(v -> onViewClicked());
+    }
 
 }

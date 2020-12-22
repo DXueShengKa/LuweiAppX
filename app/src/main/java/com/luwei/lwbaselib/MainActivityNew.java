@@ -17,7 +17,7 @@ import com.luwei.lwbaselib.activity.PopupActivity;
 import com.luwei.lwbaselib.activity.SimpleForResultActivity;
 import com.luwei.lwbaselib.activity.TimerButtonActivity;
 import com.luwei.lwbaselib.activity.TitleBarAcitivity;
-import com.luwei.lwbaselib.activity.UMShareAndAuthActivity;
+//import com.luwei.lwbaselib.activity.UMShareAndAuthActivity;
 import com.luwei.lwbaselib.adapter.MainNaviBinder;
 import com.luwei.lwbaselib.bean.MainNaviBean;
 import com.luwei.lwbaselib.module.banner.BannerActivity;
@@ -69,7 +69,7 @@ public class MainActivityNew extends LwBaseActivity {
         items.add(new MainNaviBean("图片预览ImagePreview", ImagePreviewActivity.class));
         items.add(new MainNaviBean("图片选择ImageSelector", HeaderActivity.class));
         items.add(new MainNaviBean("横幅广告Banner", BannerActivity.class));
-        items.add(new MainNaviBean("友盟分享集成", UMShareAndAuthActivity.class));
+//        items.add(new MainNaviBean("友盟分享集成", UMShareAndAuthActivity.class));
         //刷新adapter，使更新后的items数据生效
         adapter.notifyDataSetChanged();
     }

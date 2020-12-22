@@ -8,31 +8,20 @@ import com.luwei.lwbaselib.R;
 import com.luwei.util.imageloader.ImageLoaderConfig;
 import com.luwei.util.imageloader.ImageLoaderUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 显示图片框架使用的 activity
  */
 public class ImageActivity extends AppCompatActivity {
 
-    @BindView(R.id.iv_normal)
     ImageView mIvNormal;
-    @BindView(R.id.iv_circle)
     ImageView mIvCircle;
-    @BindView(R.id.iv_from_drawable)
     ImageView mIvFromDrawable;
-    @BindView(R.id.iv_round)
     ImageView mIvRound;
-    @BindView(R.id.iv_gif)
     ImageView mIvGif;
-    @BindView(R.id.iv_blur)
     ImageView mIvBlur;
-    @BindView(R.id.iv_blur1)
     ImageView mIvBlur1;
-    @BindView(R.id.iv_blur_befor)
     ImageView mIvBlurBefor;
-    @BindView(R.id.iv_mask)
     ImageView mIvMask;
 
     //    private String urlPath = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540821255682&di=0fc90d9ffd5a8b5f0588369f7c17c607&imgtype=0&src=http%3A%2F%2Fpic32.nipic.com%2F20130827%2F2531170_141548474000_2.jpg";
@@ -43,7 +32,7 @@ public class ImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
-        ButterKnife.bind(this);
+        findView();
         setTitle("图片框架使用示例");
 
 
@@ -74,4 +63,16 @@ public class ImageActivity extends AppCompatActivity {
 //                .into(mIvBlur);
 
     }
+    private void findView(){
+        mIvBlur = findViewById(R.id.iv_blur);
+        mIvMask = findViewById(R.id.iv_mask);
+        mIvBlur1 = findViewById(R.id.iv_blur1);
+        mIvFromDrawable = findViewById(R.id.iv_from_drawable);
+        mIvBlurBefor = findViewById(R.id.iv_blur_befor);
+        mIvCircle = findViewById(R.id.iv_circle);
+        mIvGif = findViewById(R.id.iv_gif);
+        mIvRound = findViewById(R.id.iv_round);
+        mIvNormal = findViewById(R.id.iv_normal);
+    }
+
 }

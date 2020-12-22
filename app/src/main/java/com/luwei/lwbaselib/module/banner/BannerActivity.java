@@ -21,41 +21,23 @@ import com.luwei.ui.banner.loader.BannerLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class BannerActivity extends AppCompatActivity {
 
-    @BindView(R.id.refresh_tv)
     TextView refreshTv;
-    @BindView(R.id.banner)
     Banner banner;
-    @BindView(R.id.banner_2)
     Banner banner2;
-    @BindView(R.id.banner_3)
     Banner banner3;
-    @BindView(R.id.banner_4)
     Banner banner4;
-    @BindView(R.id.banner_5)
     Banner banner5;
-    @BindView(R.id.banner_6)
     Banner banner6;
-    @BindView(R.id.banner_7)
     Banner banner7;
-    @BindView(R.id.banner_8)
     Banner banner8;
-    @BindView(R.id.banner_9)
     Banner banner9;
-    @BindView(R.id.banner_10_text)
     TextView banner10Text;
-    @BindView(R.id.banner_10_index)
     TextView banner10Index;
-    @BindView(R.id.banner_10)
     Banner banner10;
-    @BindView(R.id.barrage_view)
     BarrageView barrageView;
-    @BindView(R.id.banner_11)
     Banner banner11;
 
     private final List<String> mURLs = new ArrayList<>();
@@ -71,7 +53,8 @@ public class BannerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner);
-        ButterKnife.bind(this);
+        findView();
+        setClickForView();
         initBanner();
     }
 
@@ -342,7 +325,6 @@ public class BannerActivity extends AppCompatActivity {
     };
 
 
-    @OnClick(R.id.refresh_tv)
     public void onViewClicked() {
         //刷新
         Toast.makeText(this, "刷新~", Toast.LENGTH_SHORT).show();
@@ -357,6 +339,28 @@ public class BannerActivity extends AppCompatActivity {
         banner9.loadImagePaths(mURLs);
         banner10.loadImagePaths(mRes);
         banner11.loadImagePaths(mURLs);
+    }
+
+    private void findView(){
+        banner10Text = findViewById(R.id.banner_10_text);
+        refreshTv = findViewById(R.id.refresh_tv);
+        banner9 = findViewById(R.id.banner_9);
+        banner8 = findViewById(R.id.banner_8);
+        banner7 = findViewById(R.id.banner_7);
+        banner6 = findViewById(R.id.banner_6);
+        banner5 = findViewById(R.id.banner_5);
+        banner4 = findViewById(R.id.banner_4);
+        banner3 = findViewById(R.id.banner_3);
+        banner2 = findViewById(R.id.banner_2);
+        banner10Index = findViewById(R.id.banner_10_index);
+        barrageView = findViewById(R.id.barrage_view);
+        banner11 = findViewById(R.id.banner_11);
+        banner = findViewById(R.id.banner);
+        banner10 = findViewById(R.id.banner_10);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.refresh_tv).setOnClickListener(v -> onViewClicked());
     }
 
 }

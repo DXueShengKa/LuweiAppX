@@ -1,3 +1,4 @@
+/*
 package com.luwei.lwbaselib.activity;
 
 import android.content.Intent;
@@ -25,18 +26,15 @@ import com.umeng.umlibrary.UShareUtils;
 
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
+*/
 /**
  * @author LiCheng
- */
+ *//*
+
 public class UMShareAndAuthActivity extends LwBaseActivity {
-    @BindView(R.id.sp_platform)
     Spinner mSpPlatform;
-    @BindView(R.id.sp_type)
     Spinner mSpType;
-    @BindView(R.id.tv_authorize)
     TextView mTvAuthorize;
 
     private String mThumb;
@@ -66,7 +64,8 @@ public class UMShareAndAuthActivity extends LwBaseActivity {
     private ShareBoardConfig mConfig;
 
 
-    /**
+    */
+/**
      * 请完成初始化，在Application的onCreate中调用 UMConfigure.init(this,appkey,channel,UMConfigure.DEVICE_TYPE_PHONE,"")
      * 添加各平台的APPKEY等信息
      * 并按照https://juejin.im/post/5c09e118f265da61483b6939 中内容完善Manifest以及添加权限
@@ -74,9 +73,12 @@ public class UMShareAndAuthActivity extends LwBaseActivity {
      * 和在onDestroy()中添加 UMShareAPI.get(this).release() 防止内存泄漏
      * <p>
      * 本DEMO中，因为lwbase库并未在各开放平台中申请，所以并不能分享出去以及获得授权，以下只作为代码示例展示用。
-     */
+     *//*
+
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
         initShareData();
         initSpinner();
         initCustomBoard();
@@ -116,9 +118,6 @@ public class UMShareAndAuthActivity extends LwBaseActivity {
         return null;
     }
 
-    @OnClick({R.id.btn_share, R.id.btn_authorize, R.id.btn_board_bottom, R.id.btn_board_center,
-            R.id.btn_board_customize, R.id.btn_authorize_wechat, R.id.btn_delete_auth,
-            R.id.btn_show_info, R.id.btn_is_wechat_auth})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_share:
@@ -521,4 +520,22 @@ public class UMShareAndAuthActivity extends LwBaseActivity {
 
     }
 
-}
+    private void findView(){
+        mSpPlatform = findViewById(R.id.sp_platform);
+        mSpType = findViewById(R.id.sp_type);
+        mTvAuthorize = findViewById(R.id.tv_authorize);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.btn_share).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_authorize).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_board_bottom).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_board_center).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_board_customize).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_authorize_wechat).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_delete_auth).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_show_info).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_is_wechat_auth).setOnClickListener(this::onViewClicked);
+    }
+
+}*/

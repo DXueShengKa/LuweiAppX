@@ -19,22 +19,21 @@ import com.luwei.lwbaselib.activity.SimpleForResultActivity;
 import com.luwei.lwbaselib.module.rxbus.RxBusActivity;
 import com.luwei.lwbaselib.activity.TimerButtonActivity;
 import com.luwei.lwbaselib.activity.TitleBarAcitivity;
-import com.luwei.lwbaselib.activity.UMShareAndAuthActivity;
+//import com.luwei.lwbaselib.activity.UMShareAndAuthActivity;
 import com.luwei.lwbaselib.module.banner.BannerActivity;
 import com.luwei.lwbaselib.module.recyclerview.RecyclerViewActivity;
 import com.luwei.util.forresult.SimpleForResult;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 public class MainActivity extends LwBaseActivity {
 
-    @BindView(R.id.tv_content)
     TextView mTvContent;
 
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
 
     }
 
@@ -69,10 +68,6 @@ public class MainActivity extends LwBaseActivity {
 
     }
 
-    @OnClick({R.id.btn_to_image, R.id.btn_to_log, R.id.btn_to_dialog, R.id.btn_to_popup
-            , R.id.btn_to_recyclerview, R.id.btn_to_permission, R.id.btn_to_RxBus,
-            R.id.btn_to_toast, R.id.btn_activity_for_result, R.id.btn_preview, R.id.btn_header,
-            R.id.btn_banner, R.id.btn_timer_button, R.id.btn_titlebar, R.id.btn_share})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_to_image:
@@ -127,12 +122,34 @@ public class MainActivity extends LwBaseActivity {
                 //标题栏
                 startActivity(new Intent(MainActivity.this, TitleBarAcitivity.class));
                 break;
-            case R.id.btn_share:
+//            case R.id.btn_share:
                 //友盟分享和授权  因为base库并未在各开发平台注册，所以无法使用分享和授权功能，仅做代码演示用
-                startActivity(new Intent(MainActivity.this, UMShareAndAuthActivity.class));
-                break;
+//                startActivity(new Intent(MainActivity.this, UMShareAndAuthActivity.class));
+//                break;
             default:
                 break;
         }
     }
+    private void findView(){
+        mTvContent = findViewById(R.id.tv_content);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.btn_to_image).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_log).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_dialog).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_popup).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_recyclerview).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_permission).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_RxBus).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_to_toast).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_activity_for_result).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_preview).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_header).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_banner).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_timer_button).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_titlebar).setOnClickListener(this::onViewClicked);
+//        findViewById(R.id.btn_share).setOnClickListener(this::onViewClicked);
+    }
+
 }

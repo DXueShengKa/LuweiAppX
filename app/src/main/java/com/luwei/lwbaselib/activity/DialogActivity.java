@@ -24,8 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -37,7 +35,6 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class DialogActivity extends AppCompatActivity {
 
-    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
     ArrayAdapter adapter;
@@ -46,7 +43,7 @@ public class DialogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
-        ButterKnife.bind(this);
+        findView();
 
         List<String> listStr = new ArrayList<>();
         listStr.add("CustomDialog 顶部显示");
@@ -241,4 +238,8 @@ public class DialogActivity extends AppCompatActivity {
             text = itemView.findViewById(R.id.text);
         }
     }
+    private void findView(){
+        mRecyclerView = findViewById(R.id.recyclerView);
+    }
+
 }

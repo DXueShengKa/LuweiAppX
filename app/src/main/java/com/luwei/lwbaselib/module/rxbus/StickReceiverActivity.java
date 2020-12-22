@@ -10,8 +10,6 @@ import com.luwei.base.LwBaseActivity;
 import com.luwei.lwbaselib.R;
 import com.luwei.rxbus.RxBus;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by Mr_Zeng
@@ -19,13 +17,13 @@ import butterknife.OnClick;
  * @date 2019/3/4
  */
 public class StickReceiverActivity extends LwBaseActivity {
-    @BindView(R.id.btn_receive_stick)
     Button mBtnReceiveStick;
-    @BindView(R.id.tv_content)
     TextView mTvContent;
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
 
     }
 
@@ -55,7 +53,6 @@ public class StickReceiverActivity extends LwBaseActivity {
         RxBus.getInstance().unregister(this);
     }
 
-    @OnClick(R.id.btn_receive_stick)
     public void onViewClicked() {
         mTvContent.setText("");
         RxBus.getInstance()
@@ -70,4 +67,13 @@ public class StickReceiverActivity extends LwBaseActivity {
                     throwable.printStackTrace();
                 });
     }
+    private void findView(){
+        mBtnReceiveStick = findViewById(R.id.btn_receive_stick);
+        mTvContent = findViewById(R.id.tv_content);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.btn_receive_stick).setOnClickListener(v -> onViewClicked());
+    }
+
 }

@@ -14,8 +14,6 @@ import com.luwei.lwbaselib.R;
 import com.luwei.rxbus.BaseEvent;
 import com.luwei.rxbus.RxBus;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
 /**
@@ -24,16 +22,15 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 public class RxBusActivity extends LwBaseActivity {
 
 
-    @BindView(R.id.tv_content)
     TextView tvContent;
-    @BindView(R.id.et_input)
     EditText etInput;
-    @BindView(R.id.btn_change_text)
     Button btnChangeText;
 
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
 
     }
 
@@ -69,7 +66,6 @@ public class RxBusActivity extends LwBaseActivity {
     }
 
 
-    @OnClick({R.id.btn_change_text, R.id.btn_send_stick})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_change_text:
@@ -85,4 +81,15 @@ public class RxBusActivity extends LwBaseActivity {
                 break;
         }
     }
+    private void findView(){
+        tvContent = findViewById(R.id.tv_content);
+        btnChangeText = findViewById(R.id.btn_change_text);
+        etInput = findViewById(R.id.et_input);
+    }
+
+    private void setClickForView(){
+        btnChangeText.setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_send_stick).setOnClickListener(this::onViewClicked);
+    }
+
 }

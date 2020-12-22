@@ -10,16 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AdaptScreenUtils;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 
 public abstract class LwBaseActivity<P extends IPresent> extends AppCompatActivity implements IView<P> {
 
     public static final String TAG = "LwBaseActivity";
 
     private P p;
-    private Unbinder unbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +23,6 @@ public abstract class LwBaseActivity<P extends IPresent> extends AppCompatActivi
         Log.i(TAG, "current activity: " + getLocalClassName());
         adaptScreen();
         setContentView(getLayoutId());
-        unbinder = ButterKnife.bind(this);
         initView(savedInstanceState);
         initEvent();
         initData();
@@ -71,9 +66,6 @@ public abstract class LwBaseActivity<P extends IPresent> extends AppCompatActivi
             p.detachV();
         }
 
-        if (unbinder != null) {
-            unbinder.unbind();
-        }
         p = null;
         super.onDestroy();
     }

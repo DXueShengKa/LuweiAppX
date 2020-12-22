@@ -20,11 +20,9 @@ import com.previewlibrary.GPreviewBuilder;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
 
 public class ImagePreviewActivity extends LwBaseActivity {
 
-    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     private Items mItems;
@@ -35,6 +33,7 @@ public class ImagePreviewActivity extends LwBaseActivity {
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
         mGridLayoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(mGridLayoutManager);
         recyclerView.addItemDecoration(new GridSpaceDecoration(20,20));
@@ -96,4 +95,8 @@ public class ImagePreviewActivity extends LwBaseActivity {
             mThumbViewInfoList.get(i).setBounds(bounds);
         }
     }
+    private void findView(){
+        recyclerView = findViewById(R.id.recyclerView);
+    }
+
 }

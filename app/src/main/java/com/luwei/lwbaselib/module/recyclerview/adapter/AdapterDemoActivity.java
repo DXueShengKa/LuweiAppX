@@ -13,8 +13,6 @@ import com.luwei.recyclerview.adapter.extension.SampleBinder;
 import com.luwei.recyclerview.adapter.multitype.Items;
 import com.luwei.recyclerview.adapter.multitype.LwAdapter;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by Mr_Zeng
@@ -22,7 +20,6 @@ import butterknife.OnClick;
  * @date 2018/11/15
  */
 public class AdapterDemoActivity extends LwBaseActivity {
-    @BindView(R.id.rv_adapter_demo)
     RecyclerView rvAdapterDemo;
 
     LwAdapter mAdapter;
@@ -30,6 +27,8 @@ public class AdapterDemoActivity extends LwBaseActivity {
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
         rvAdapterDemo.setLayoutManager(new LinearLayoutManager(this));
     }
 
@@ -70,8 +69,6 @@ public class AdapterDemoActivity extends LwBaseActivity {
 
     }
 
-    @OnClick({R.id.btn_adapter_single, R.id.btn_adapter_multi, R.id.btn_adapter_header, R.id.btn_adapter_footer,
-            R.id.btn_empty_data})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_adapter_single: //单一类型
@@ -161,4 +158,16 @@ public class AdapterDemoActivity extends LwBaseActivity {
         RichTextBean bean = new RichTextBean(R.mipmap.ic_launcher_round, "第" + existedSize + "个Footer");
         mAdapter.addFooter(bean);
     }
+    private void findView(){
+        rvAdapterDemo = findViewById(R.id.rv_adapter_demo);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.btn_adapter_single).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_adapter_multi).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_adapter_header).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_adapter_footer).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_empty_data).setOnClickListener(this::onViewClicked);
+    }
+
 }

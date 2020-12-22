@@ -8,8 +8,6 @@ import com.luwei.base.LwBaseActivity;
 import com.luwei.lwbaselib.R;
 import com.luwei.ui.view.TimerButton;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by Mr_Zeng
@@ -19,11 +17,12 @@ import butterknife.OnClick;
 public class TimerButtonActivity extends LwBaseActivity {
 
 
-    @BindView(R.id.view_timer_btn)
     TimerButton mViewTimerBtn;
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        findView();
+        setClickForView();
         mViewTimerBtn.setCallback(new TimerButton.Callback() {
             @Override
             public void onFinish(TimerButton button) {
@@ -62,8 +61,15 @@ public class TimerButtonActivity extends LwBaseActivity {
         return null;
     }
 
-    @OnClick(R.id.view_timer_btn)
     public void onViewClicked() {
         mViewTimerBtn.start();
     }
+    private void findView(){
+        mViewTimerBtn = findViewById(R.id.view_timer_btn);
+    }
+
+    private void setClickForView(){
+        findViewById(R.id.view_timer_btn).setOnClickListener(v -> onViewClicked());
+    }
+
 }
