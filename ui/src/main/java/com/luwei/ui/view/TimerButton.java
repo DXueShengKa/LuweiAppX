@@ -140,8 +140,10 @@ public class TimerButton extends androidx.appcompat.widget.AppCompatButton {
     @Override
     protected void onDetachedFromWindow() {
         resetStatus();
-        mTimer.cancel();
-        mTimer = null;
+        if (mTimer != null){
+            mTimer.cancel();
+            mTimer = null;
+        }
         super.onDetachedFromWindow();
     }
 

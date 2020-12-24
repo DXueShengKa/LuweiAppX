@@ -1,7 +1,6 @@
 package com.luwei.util.forresult;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import androidx.fragment.app.Fragment;
@@ -17,7 +16,7 @@ public class SimpleForResult {
     private static final String TAG = "SimpleForResult";
     private final SimpleOnResultFragment mSimpleOnResultFragment;
 
-    public SimpleForResult(AppCompatActivity activity) {
+    public SimpleForResult(FragmentActivity activity) {
         mSimpleOnResultFragment = getOnResultFragment(activity.getSupportFragmentManager());
     }
 

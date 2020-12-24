@@ -6,7 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,9 @@ import android.view.ViewGroup;
 
 public abstract class LwBaseFragment<P extends IPresent>
         extends Fragment implements IView<P> {
-    protected AppCompatActivity hostActivity;
+    protected FragmentActivity hostActivity;
     private P p;
-    private View mRootView;
+    protected View mRootView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -67,7 +68,7 @@ public abstract class LwBaseFragment<P extends IPresent>
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.hostActivity = (AppCompatActivity) context;
+            this.hostActivity = (FragmentActivity) context;
         }
     }
 

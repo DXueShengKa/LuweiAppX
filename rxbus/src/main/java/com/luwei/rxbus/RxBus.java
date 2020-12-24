@@ -265,30 +265,5 @@ public class RxBus {
             RxBus.getInstance().with(mObserver, subscriber);
         }
 
-//
-//        /**
-//         * {@link Flowable#subscribe(Consumer)}
-//         */
-//        public void subscribeStick(Consumer<T> onNext) {
-//            subscribe(onNext, Functions.ON_ERROR_MISSING);
-//        }
-//
-//        /**
-//         * {@link Flowable#subscribe(Consumer, Consumer)}
-//         */
-//        public void subscribeStick(Consumer<T> onNext, Consumer<? super Throwable> onError) {
-//            subscribe(onNext, onError, Functions.EMPTY_ACTION);
-//        }
-//
-//        /**
-//         * {@link Flowable#subscribe(Consumer, Consumer, Action)}
-//         */
-//        public void subscribeStick(Consumer<T> onNext, Consumer<? super Throwable> onError,
-//                              Action onComplete) {
-//            BusLambdaSubscriber<T> subscriber = new BusLambdaSubscriber<>(
-//                    onNext, onError, onComplete, FlowableInternalHelper.RequestMax.INSTANCE);
-//            mFlowable.subscribe(subscriber);
-//            RxBus.getInstance().with(mObserver, subscriber);
-//        }
     }
 }
