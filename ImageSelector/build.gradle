@@ -35,7 +35,7 @@ dependencies {
 // 打包源码jar
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    getArchiveClassifier().set('sources')
+    archiveClassifier.set('sources')
 }
 //编译groovy代码时采用 UTF-8
 tasks.withType(GroovyCompile) {

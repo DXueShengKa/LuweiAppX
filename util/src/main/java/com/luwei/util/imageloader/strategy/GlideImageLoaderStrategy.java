@@ -41,7 +41,6 @@ public class GlideImageLoaderStrategy implements BaseImageLoaderStrategy {
      *
      * @return
      */
-    @SuppressLint("CheckResult")
     public RequestOptions getNormalOptions() {
         if (normalOptions == null) {
             normalOptions = new RequestOptions()
@@ -60,7 +59,6 @@ public class GlideImageLoaderStrategy implements BaseImageLoaderStrategy {
      *
      * @return
      */
-    @SuppressLint("CheckResult")
     public RequestOptions getGifOptions() {
         if (gifOptions == null) {
             gifOptions = new RequestOptions()
@@ -79,7 +77,6 @@ public class GlideImageLoaderStrategy implements BaseImageLoaderStrategy {
      *
      * @return
      */
-    @SuppressLint("CheckResult")
     public RequestOptions getCircleOptions() {
         if (circleOptions == null) {
             circleOptions = new RequestOptions()
